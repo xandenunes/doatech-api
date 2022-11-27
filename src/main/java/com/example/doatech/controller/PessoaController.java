@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.doatech.models.Pes_Pessoa;
+import com.example.doatech.models.Pessoa;
 import com.example.doatech.services.PessoaServices;
 
 
@@ -26,16 +26,16 @@ public class PessoaController {
 	PessoaServices services;
 
 	@GetMapping
-	public ArrayList<Pes_Pessoa> Todos(){
+	public ArrayList<Pessoa> Todos(){
 		return services.findAll();
 	}
 	@PostMapping("/criar")
-	public Pes_Pessoa create(@RequestBody Pes_Pessoa pessoa) {
+	public Pessoa create(@RequestBody Pessoa pessoa) {
 		return services.save(pessoa);
 	}
 	
 	@GetMapping("/{publicacao}")
-	public ArrayList<Pes_Pessoa> get(@PathVariable Integer publicacao){ 
+	public ArrayList<Pessoa> get(@PathVariable Integer publicacao){ 
 		return services.get(publicacao);
 	}
 	@DeleteMapping("/delete/{id}")
