@@ -23,6 +23,10 @@ public class UsuarioServices {
 		List = (ArrayList<Usuario>) repository.findAll();
 		return List;
 	}
+	
+	public Usuario login(Usuario pessoa) {
+		return repository.login(pessoa.getLogin(),pessoa.getPassword());
+	}
 
 	public Usuario save(Usuario pessoa) {
 		return repository.save(pessoa);

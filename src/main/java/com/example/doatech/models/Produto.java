@@ -18,6 +18,9 @@ public class Produto {
 	@Column(name = "prd_ds_descricao")
 	private String descricao;
 	
+	@Column(name = "prd_ds_titulo")
+	private String titulo;
+	
 	@Column(name = "prd_ds_quantidade")
 	private Integer quantidade;
 	
@@ -27,6 +30,10 @@ public class Produto {
 	@OneToOne
 	@JoinColumn(name="cat_id_categoria")
 	private Categoria categoria;
+	
+	@OneToOne
+	@JoinColumn(name="usr_id_usuario")
+	private Usuario usuario;
 
 	public Integer getPrd_id_produto() {
 		return prd_id_produto;
@@ -67,6 +74,20 @@ public class Produto {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
-	
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 }

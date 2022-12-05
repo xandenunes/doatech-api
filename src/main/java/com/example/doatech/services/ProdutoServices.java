@@ -1,6 +1,7 @@
 package com.example.doatech.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,13 @@ public class ProdutoServices {
 
 	public Produto save(Produto pessoa) {
 		return repository.save(pessoa);
+	}
+	
+	public Optional<Produto> get(Integer id) {
+		Optional<Produto> publicacao = repository.findById(id);
+		return publicacao;
+		
+		
 	}
 
 	public void delete(Integer id) {

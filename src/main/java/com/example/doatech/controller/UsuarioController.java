@@ -31,6 +31,10 @@ public class UsuarioController {
 	public ArrayList<Usuario> Todos(){
 		return services.findAll();
 	}
+	@PostMapping("login")
+	public Usuario login(@RequestBody Usuario pessoa){
+		return services.login(pessoa);
+	}
 	@PostMapping("/criar")
 	public Usuario create(@RequestBody Usuario pessoa) {
 		return services.save(pessoa);

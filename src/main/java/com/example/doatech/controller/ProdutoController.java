@@ -1,6 +1,7 @@
 package com.example.doatech.controller;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,6 +32,13 @@ public class ProdutoController {
 	public ArrayList<Produto> Todos(){
 		return services.findAll();
 	}
+	
+	@GetMapping("/{id}")
+	public Optional<Produto> pesquisar(@PathVariable("id") Integer id) {
+		Optional<Produto> publicacao = services.get(id);
+		return publicacao;
+	}
+	
 	@PostMapping("/criar")
 	public Produto create(@RequestBody Produto pessoa) {
 		return services.save(pessoa);

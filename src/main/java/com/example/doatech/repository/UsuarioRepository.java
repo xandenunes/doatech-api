@@ -8,5 +8,7 @@ import com.example.doatech.models.Pessoa;
 import com.example.doatech.models.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
-
+	
+	@Query("SELECT u FROM USR_USUARIO u WHERE u.login = ?1 AND u.password=?2")
+	Usuario login(String login,String senha); 
 }

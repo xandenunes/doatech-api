@@ -15,6 +15,9 @@ public class Categoria {
 	
 	@Column(name = "cat_ds_descricao")
 	private String descricao;
+	
+	@Column(name = "cat_ds_cor")
+	private String cor;
 
 	public Integer getCat_id_categoria() {
 		return cat_id_categoria;
@@ -30,6 +33,14 @@ public class Categoria {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public void setCor(String cor) {
+		this.cor = cor;
 	}
 	
 	

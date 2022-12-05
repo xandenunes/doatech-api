@@ -21,6 +21,9 @@ public class Pessoa {
 	
 	@Column(name = "pes_nm_nome")
 	private String nome;
+	
+	@Column(name = "pes_nm_telefone")
+	private String telefone;
 
 	public Integer getPes_id_pessoa() {
 		return pes_id_pessoa;
@@ -53,6 +56,16 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+
 
 	
 }
